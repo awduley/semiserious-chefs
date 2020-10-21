@@ -1,0 +1,59 @@
+.header-main {
+  height: 14rem;
+
+  &__top-bar {
+    height: 8rem;
+    background: radial-gradient($color-primary-1, $color-primary-4);
+    box-shadow: 0 2px 2px $color-gray-dark;
+  } 
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-img {
+  margin: 0 1rem;
+}
+
+.logo {
+  color: $color-secondary-2-4;
+  text-shadow: 0 0 12px white;
+  position: relative;
+
+  &-knife {
+    width: 8rem;
+    height: auto;
+    transform: scale(-1,1) rotate(-35deg);
+    position: absolute;
+    bottom: 30%;
+    left: 53%;
+    z-index: 0;
+  }
+
+  .semiserious {
+    z-index: 10;
+    position: relative;
+  }
+
+  .chefs {
+    z-index: 1;
+  }
+}
+
+.nav-main {
+  
+  &__items {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    padding: 1rem;
+  }
+
+  .menu-item {
+    margin: 0 1.6rem;
+    font-size: 1.7rem;
+  }
+}

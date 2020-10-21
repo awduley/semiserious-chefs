@@ -1,0 +1,27 @@
+#secondary-bottom {
+
+}
+
+.widget-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+  background: blue;;
+  padding: 2rem;
+} 
+
+.widget {
+  background: pink;
+  background: green;
+}
+
+.widget-title ul li {
+  color: orange;
+  font-size: 4rem;
+}
+
+.hello {
+  background: red;
+}

@@ -1,0 +1,12 @@
+// Custom transition mixins
+@mixin transition-slow {
+  transition: all .7s ease;
+}
+
+@mixin transition-medium {
+  transition: all .4s ease;
+}
+
+@mixin transition-fast {
+  transition: all .2s ease; 
+}

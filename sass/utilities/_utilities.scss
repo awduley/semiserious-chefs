@@ -1,0 +1,36 @@
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: left;
+}
+
+.margin-container {
+  margin: 0 1.2rem;
+}
+
+.margin-y-sm {
+  margin: .6rem 0;
+}
+
+.margin-y-md {
+  margin: 1.4rem 0;
+}
+
+.margin-y-lg {
+  margin: 2.2rem 0;
+}
+
+.margin-y-xl {
+  margin: 3.8rem 0;
+}
+
+// different colors for span elements in titles
+.accent-primary {
+  color: $color-primary-3;
+}
+
+.accent-secondary-1-2 {
+  color: $color-secondary-1-2;
+}

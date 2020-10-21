@@ -1,0 +1,17 @@
+#secondary-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: flex-start;
+}
+
+.sidebar-widget-area {
+
+  .widget {
+    margin: 2rem 0;
+  }
+
+  h2.widgettitle {
+    font-size: 1.8rem;
+  }
+} 
