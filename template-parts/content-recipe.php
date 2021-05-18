@@ -13,6 +13,14 @@
 
     <div class="post-thumbnail">
       <?php the_post_thumbnail(); ?>
+      <div class="post-nav">
+        <div class="post-nav__prev">
+          Previous recipe
+        </div>
+        <div class="post-nav__next">
+          Next Recipe
+        </div>
+      </div>
     </div>
 
   <div class="entry-content">

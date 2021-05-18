@@ -91,7 +91,7 @@ function semiserious_chefs_setup() {
   add_image_size( 'portrait', 350, 750, true );
   add_image_size( 'box', 400, 400, true );
   add_image_size( 'medium', 700, 400, true );
-  add_image_size( 'blog', 900, 650, true);
+  add_image_size( 'blog', 1800, 650, true);
 
   /**
    * Add theme support for core custom logo
@@ -171,3 +171,58 @@ function semiserious_chefs_widgets_init() {
   );
 }
 add_action( 'widgets_init', 'semiserious_chefs_widgets_init' );
+
+
+
+
+function semiserious_chefs_custom_comment_title( $defaults ){
+  $defaults['title_reply'] = __( 'Post a comment', 'semiserious-chefs' );
+  return $defaults;
+}
+add_filter('comment_form_defaults', 'semiserious_chefs_custom_comment_title', 20);
+
+
+
+
+// // Remove the website field from the comment section
+function unset_url_field( $fields ) {
+  if(isset( $fields [ 'url' ] ) )
+  unset( $fields [ 'url' ] );
+  return $fields;
+}
+add_filter( 'comment_form_default_fields', 'unset_url_field' );
+
+
+
+
+
+
+
+
+// comment form fields re-defined:
+  add_filter( 'comment_form_default_fields', 'mo_comment_fields_custom_html' );
+  function mo_comment_fields_custom_html( $fields ) {
+    // first unset the existing fields:
+    unset( $fields['comment'] );
+    unset( $fields['author'] );
+    unset( $fields['email'] );
+    unset( $fields['url'] );
+    // then re-define them as needed:
+    $fields = [
+      'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required" placeholder="Share your thoughts"></textarea></p>',
+      'author' => '<p class="comment-form-author">' . '<label for="author">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' placeholder="&ast; Your name" /></p>',
+      'email'  => '<p class="comment-form-email"><label for="email">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+        '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' placeholder="&ast; Your email" /></p>',
+      // 'url'    => '<p class="comment-form-url"><label for="url">' . __( 'A CUSTOM WEBSITE LABEL', 'textdomain'  ) . '</label> ' .
+      //   '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>',
+    ];
+    // done customizing, now return the fields:
+    return $fields;
+  }
+  // remove default comment form so it won't appear twice
+  add_filter( 'comment_form_defaults', 'mo_remove_default_comment_field', 10, 1 ); 
+  function mo_remove_default_comment_field( $defaults ) { if ( isset( $defaults[ 'comment_field' ] ) ) { $defaults[ 'comment_field' ] = ''; } return $defaults; }
+
+
+
