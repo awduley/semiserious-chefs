@@ -1,6 +1,11 @@
 @import 'content/header';
 @import 'content/page';
+@import 'content/post';
+@import 'content/comments';
+@import 'content/searchform';
+@import 'content/front-page';
+@import 'content/search';
 @import 'content/sidebar';
-//@import 'content/sidebar-bottom';
-//@import 'content/sidebar-right';
+@import 'content/sidebar-bottom';
 @import 'content/footer';
+@import 'content/404';

@@ -2,24 +2,16 @@
 .newest-recipes {
   margin-bottom: 4rem;
 
-  a:hover {
-    color: $color-secondary-2-4;
-
-    &::after {
-      content: '';
-      width: 0;
-    }
-  }
-
   &__heading {
     font-weight: 400;
   }
 
+  
   &__container {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(20rem, 1fr));
-    align-items: start;
-    justify-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
     grid-gap: 1.4rem;
   }
 
@@ -32,10 +24,25 @@
     position: relative;
   }
 
+  &__img {
+    position: relative;
+
+
+    &:hover::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .4);
+    }  
+  }
+
   .wp-post-image {
     object-fit: cover;
     width: 100%;
-    height: 40rem;
+    height: 20rem;
   }
 
   // &__bottom {
@@ -49,22 +56,17 @@
   //   bottom: 1%;
   //   left: 0;
   //   padding: 0 .8rem;
-  //   width: 100%;
-  // }
+  //   width: 100%; 
+  // } 
 
   &__title {
-    //font-weight: 400;
-    color: $color-secondary-1-1;
-    color: $color-secondary-2-1;
-    color: $color-primary-1;
-    color: $color-white;
     @include transition-fast;
     text-align: center;
+    color: $color-gray-dark;
+    font-size: 1.8rem;
 
     &:hover {
       color: $color-secondary-1-4;
-      color: $color-secondary-2-1;
-      color: $color-primary-1; 
     }
   }
 }
@@ -74,22 +76,30 @@
 
   &__container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    //align-items: center;
     margin-bottom: 4rem;
   }
 
   &__pic {
     outline: none;
     border-radius: 50%;
-    width: 30rem;
-    height: 30rem;
+    width: 80%;
+    max-width: 30rem;
+    height: auto;
     border: .4rem solid $color-gray-light; 
   }
 
   p,
   &__pic {
     margin: 0 1rem;
+  }
+
+  p {
+    background: white;
+    margin: 0 auto;
+    max-width: 60rem;
   }
 
   &__info {
@@ -110,27 +120,19 @@
 
 // Recent posts section
 .recent-posts {
-  margin-bottom: 4rem;
 
-  // a:hover {
-  //   color: $color-secondary-2-4;
-    
-  //   &::after {
-  //     content: '';
-  //     width: 0;
-  //   }
-  // }
+  margin-bottom: 4rem;
 
   &__heading {
     font-weight: 400;
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax( 30rem, 40rem));
-    align-items: start;
-    justify-content: center;
-    grid-gap: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 1.4rem; 
   }
 
   &__post {
@@ -160,13 +162,13 @@
 
   &__excerpt {
     width: 100%;
-    margin: 2rem 0;
+    margin: 0 2rem 2rem;
   }
 }
 
 // Ingrediently section
 .ingrediently { 
-  height: 60rem;
+  height: auto;
   margin-bottom: 4rem;
 
   &-heading {
@@ -175,6 +177,9 @@
 
   &-container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     // background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../img/kitchen.jpg');
     background: linear-gradient(rgba($color-primary-1, .7), rgba($color-primary-4, .9));
     background-size: cover;
@@ -183,25 +188,24 @@
     padding: 1.4rem;
     color: $color-white;
 
-    &__info {
+    .temp-img {
+      width: 100%;
+      max-width: 50rem;
+    }
 
+    &__img {
+      width: 100%;
+    }
+
+    &__info {
+      width: 92%;
+      max-width: 50rem;
     }
 
     &__item {
       margin: 2rem 0;
+      list-style: "\1F44D";
     }
-
-    &__image {
-      width: 30rem;
-      height: auto;
-      box-shadow: 0 1.6rem 1.4rem $color-black;
-      @include transition-slow;
-      margin: 4rem;
-
-      &:hover {
-        transform: scale(1.05); 
-      }
-    } 
   }
 }
 
@@ -223,10 +227,10 @@
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(20rem, 1fr));
-    align-items: start;
-    justify-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
     grid-gap: 1.4rem;
   }
 
@@ -239,6 +243,33 @@
     position: relative;
   }
 
+  &__img {
+    position: relative;
+
+
+    &:hover::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .4);
+    }  
+  }
+
+  &__image {
+    width: 30rem;
+    height: auto;
+    box-shadow: 0 1.6rem 1.4rem $color-black;
+    @include transition-slow;
+    margin: 4rem;
+
+    &:hover {
+      transform: scale(1.05); 
+    }
+  } 
+
   .wp-post-image {
     object-fit: cover;
     width: 100%;
@@ -246,25 +277,7 @@
     display: block;
   }
 
-  // &__bottom {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   background: rgba(0, 0, 0, .7);
-  //   min-height: 8rem;
-  //   max-height: auto;
-  //   position: absolute;
-  //   bottom: 1%;
-  //   left: 0;
-  //   padding: 0 .8rem;
-  //   width: 100%;
-  // }
-
   &__title {
-    color: $color-secondary-1-1;
-    color: $color-secondary-2-1;
-    color: $color-primary-1;
-    color: $color-white;
     @include transition-fast;
     text-align: center;
     font-size: 1.8rem;
@@ -272,10 +285,6 @@
 
     &:hover {
       color: $color-secondary-1-4;
-      color: $color-secondary-2-1;
-      color: $color-primary-1; 
     }
   }
 }
-
-// Recipes/

@@ -13,29 +13,39 @@ html {
 
 body {
   font-size: 1.6rem;
+  padding: 0 2rem;
+  width: 100%;
 } 
+
+.container {
+  width: 100%;
+  // background: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .content-wrap {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background: orange;
+  width: 92%;
 }
 
 #primary {
   width: 100%;
+  margin: 0 auto;
 }
 
 .widget-area {
   padding: 2rem;
-  width: 32rem;
+  width: 100%;
 }
 
-#page {
-  
-}
-
-#masthead {
- 
-}
-
-#colophon {
-  
+.site-main {
+  //padding: 1rem;
+  // background: blueviolet;
+  margin: 0 auto;
+  width: 100%;
 }

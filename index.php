@@ -5,7 +5,7 @@
 
  get_header();
 ?>
-
+  <div class="content-wrap">
   <main id="primary" class="site-main">
 
     <?php 
@@ -28,7 +28,8 @@
 
         endwhile;
 
-        the_posts_navigation();
+        // the_posts_navigation();
+        //posts_nav_link();
 
       else :
 
@@ -36,8 +37,16 @@
 
       endif;
          ?>
-<h1>this is index.php</h1>
-  </main><!-- #primary -->
 
+  </main><!-- #primary -->
   <?php 
-  get_footer();
+  if( is_active_sidebar( 'sidebar' ) ):
+    get_sidebar(); 
+  endif;
+  ?>
+  </div><!-- .content-wrap -->
+  <?php 
+if( is_active_sidebar( 'sidebar-bottom' ) ) : 
+  get_sidebar( 'bottom' );
+endif;
+get_footer();

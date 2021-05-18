@@ -1,18 +1,8 @@
-<?php 
-/**
- * Template for the bottom sidebar widget area
- */
-
-if( ! is_active_sidebar( 'sidebar-bottom' ) ) {
-  return;
-}
-?>
-
-<aside id="secondary-bottom" class="widget-area sidebar-bottom">
+<aside id="secondary-sidebar-bottom" class="widget-area__sidebar-bottom  sidebar-widget-area__sidebar-bottom">
   <?php 
-    if( is_active_sidebar( 'sidebar-bottom' ) ) :
-      dynamic_sidebar( 'sidebar-bottom' );
-    endif;
+    if( ! is_dynamic_sidebar( 'sidebar-bottom' ) ) {
+      return;
+    } 
+    dynamic_sidebar( 'sidebar-bottom' );
   ?>
-  <h1 class="hello">hello</h1>
-</aside><!-- #secondary-bottom --> 
+</aside><!-- #secondary-sidebar-bottom -->

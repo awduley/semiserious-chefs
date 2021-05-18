@@ -20,37 +20,23 @@
 <div id="page" class="container">
 
   <header id="masthead" class="site-header header-main">
+
     <div class="header-main__top-bar">
       <div class="logo-container">
-        <!-- <img src="" alt="Semiserious Chefs logo" class="logo-img"> -->
-        <h1 class="logo"><span class="semiserious">Semiserious</span><img class="logo-knife" src="<?php echo get_template_directory_uri() . '/img/knife-2.png'; ?>" alt="Knife"> <span class="chefs">Chefs</span></h1>
+        <h1 class="logo"><span class="semiserious"><?php esc_html_e( 'Semiserious', 'semiserious-chefs' ); ?></span><img class="logo-knife" src="<?php echo get_template_directory_uri() . '/img/knife-2.png'; ?>" alt="Knife"> <span class="chefs"><?php esc_html_e( 'Chefs', 'semiserious-chefs' ); ?></span></h1>
+        <div class="search-form">
+          <?php get_search_form(); ?>
+        </div>
       </div>
     </div><!-- .header-main_top-bar -->
+
     <nav class="nav-main">
-    <?php wp_nav_menu(
-      array(
-        'theme_location'  => 'menu-primary',
-        'menu_id'         => 'primary-menu',
-        'menu_class'      => 'nav-main__items'
-      )
-    ); ?>
-      <!-- <ul class="nav-main__items">
-        <li class="nav-main__item">
-          <a href="#">Home</a>
-        </li>
-        <li class="nav-main__item">
-          <a href="#">Our Story</a>
-        </li>
-        <li class="nav-main__item">
-          <a href="#">Blog</a>
-        </li>
-        <li class="nav-main__item">
-          <a href="#">Ingrediently</a>
-        </li>
-        <li class="nav-main__item">
-          <a href="#">Contact</a>
-        </li>
-      </ul>.nav-main__items -->
-    </nav><!-- .nav-main -->
-    
+      <?php wp_nav_menu(
+        array(
+          'theme_location'  => 'menu-primary',
+          'menu_id'         => 'primary-menu',
+          'menu_class'      => 'nav-main__items'
+        )
+      ); ?>
+    </nav>
   </header><!-- #masthead -->

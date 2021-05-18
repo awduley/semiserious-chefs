@@ -1,5 +1,6 @@
 .header-main {
   height: 14rem;
+  width: 100%;
 
   &__top-bar {
     height: 8rem;
@@ -10,8 +11,10 @@
 
 .logo-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  height: 100%;
 }
 
 .logo-img {
@@ -22,6 +25,7 @@
   color: $color-secondary-2-4;
   text-shadow: 0 0 12px white;
   position: relative;
+  cursor: pointer;
 
   &-knife {
     width: 8rem;
@@ -43,6 +47,15 @@
   }
 }
 
+.search-form {
+
+}
+
+.custom-search-field {
+  font-size: 1.8rem;
+  color: $color-gray-medium; 
+}
+
 .nav-main {
   
   &__items {
@@ -55,5 +68,35 @@
   .menu-item {
     margin: 0 1.6rem;
     font-size: 1.7rem;
+  }
+
+  a {
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: $color-secondary-1-4;;
+      @include transition-fast;
+    }
+
+  }
+
+  a:hover {
+    color: $color-secondary-1-4;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $color-secondary-1-4;;
+      @include transition-fast;
+    }
   }
 }

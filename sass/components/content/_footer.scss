@@ -1,7 +1,15 @@
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
 .social-icons {
 
   i {
-    margin: 0 .4rem;
+    margin: 0 .4rem 3rem;
     color: $color-secondary-1-2;
     @include transition-medium;
 
@@ -17,9 +25,11 @@
 
   .cfs {
     
-    background: linear-gradient(to bottom right, $color-primary-2, $color-secondary-2-3);
-    -webkit-background-clip: text;
-    color: transparent;
+    a {
+      background: linear-gradient(to bottom right, $color-primary-2, $color-secondary-2-3);
+      -webkit-background-clip: text;
+      color: transparent;
+    }  
   }
   
   p,

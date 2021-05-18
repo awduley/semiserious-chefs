@@ -4,10 +4,6 @@
  *
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Crypto_Template
  */
 
 /*
@@ -20,26 +16,26 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area margin-container">
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
+	if ( have_comments() ) : 
 		?>
 		<h2 class="comments-title">
 			<?php
-			$crypto_template_comment_count = get_comments_number();
-			if ( '1' === $crypto_template_comment_count ) {
+			$semiserious_chefs_comment_count = get_comments_number();
+			if ( '1' === $semiserious_chefs_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'crypto-template' ),
+					esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'semiserious-chefs' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $crypto_template_comment_count, 'comments title', 'crypto-template' ) ),
-					number_format_i18n( $crypto_template_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $semiserious_chefs_comment_count, 'comments title', 'semiserious-chefs' ) ),
+					number_format_i18n( $semiserious_chefs_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
@@ -65,7 +61,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'crypto-template' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'semiserious-chefs' ); ?></p>
 			<?php
 		endif;
 

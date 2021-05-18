@@ -1,0 +1,33 @@
+.custom-search-form {
+  position: relative;
+}
+
+.custom-search-field {
+	width: 100%;
+	border: 1px solid $color-gray-light;
+  padding: 1rem 1.5rem;
+  padding-right: 5.5rem;
+  
+  &:focus {
+    outline: 1px solid $color-gray-medium;
+  }
+}
+
+.custom-search-submit {
+	position: absolute;
+	height: 100%;
+	right: 0;
+	top: 0;
+	border: none;
+	width: 5rem;
+	padding-top: .5rem;
+	color: $color-gray-medium;
+	background-color: transparent;
+  cursor: pointer;
+	-webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.fa-search {
+  transform: scale(1.2);
+}

@@ -33,6 +33,9 @@ function semiserious_chefs_setup() {
    */
   add_theme_support( 'title-tag' );
 
+  // Add theme support for woocommerce just in case we intend to use it in the future
+  add_theme_support( 'woocommerce' );
+
   /**
    * Switch default core markup for search form, comment form, and comments to output valid HTML5
    */
@@ -48,6 +51,21 @@ function semiserious_chefs_setup() {
     )
   );
 
+  // Add theme support for post formats
+  add_theme_support( 
+    'post-formats',
+    [
+      'standard',
+      'aside',
+      'gallery',
+      'link',
+      'image',
+      'quote',
+      'status',
+      'video'
+    ] 
+  );
+
   /**
    * Add default posts and comments RSS feed links to head
    */
@@ -57,7 +75,6 @@ function semiserious_chefs_setup() {
    * Enable post thumbnails on posts and pages
    */
   add_theme_support( 'post-thumbnails' );
-
 
   /**
    * This theme has navigation menus in two locations
@@ -74,7 +91,30 @@ function semiserious_chefs_setup() {
   add_image_size( 'portrait', 350, 750, true );
   add_image_size( 'box', 400, 400, true );
   add_image_size( 'medium', 700, 400, true );
-  add_image_size( 'blog', 900, 650 );
+  add_image_size( 'blog', 900, 650, true);
+
+  /**
+   * Add theme support for core custom logo
+   */
+  add_theme_support(
+    'custom-logo',
+    array(
+      'width'       => 150,
+      'height'      => 150,
+      'flex-width'  => true,
+      'flex-height' => true
+    )
+  );
+
+  $customHeaderArgs = [
+    'width'   => 225,
+    'height'  => 1920
+  ];
+
+  // Add theme support for a custom header
+  add_theme_support(
+    'custom-header', $customHeaderArgs
+  );
 
   /**
    * Set up the WordPress core custom background feature
@@ -98,21 +138,12 @@ function semiserious_chefs_setup() {
    * Add theme support for selective refresh for widgets
    */
    add_theme_support( 'customize-selective-refresh-widgets' );
-
-  /**
-   * Add theme support for core custom logo
-   */
-  add_theme_support(
-    'custom-logo',
-    array(
-      'width'       => 300,
-      'height'      => 300,
-      'flex-width'  => true,
-      'flex-height' => true
-    )
-  );
 }
 add_action( 'after_setup_theme', 'semiserious_chefs_setup' );
+
+// Support for Gutenberg features
+add_theme_support( 'align-wide' );
+add_theme_support( 'responsive-embeds' );
 
 /**
  * Resister widgets area
@@ -125,6 +156,16 @@ function semiserious_chefs_widgets_init() {
       'id'            => 'sidebar',
       'description'   => esc_html__( 'Drop widgets here.', 'semiserious-chefs' ),
       'before_widget' => '<div class="widget">',
+      'after_widget'  => '</div>', 
+    )
+  );
+
+  register_sidebar(
+    array(
+      'name'          => esc_html__( 'Sidebar Bottom', 'semiserious-chefs' ),
+      'id'            => 'sidebar-bottom',
+      'description'   => esc_html__( 'Drop widgets here.', 'semiserious-chefs' ),
+      'before_widget' => '<div class="widget-bottom">',
       'after_widget'  => '</div>', 
     )
   );
