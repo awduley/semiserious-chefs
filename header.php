@@ -30,6 +30,21 @@
       </div>
     </div><!-- .header-main_top-bar -->
 
+    <div class="hamburger-btn">
+        <div class="line-1"></div>
+        <div class="line-2"></div>
+        <div class="line-3"></div>
+      </div>
+    <nav class="nav-main__mobile">
+      <?php wp_nav_menu(
+        array(
+          'theme_location'  => 'menu-primary',
+          'menu_id'         => 'primary-menu',
+          'menu_class'      => 'nav-main__mobile--items'
+        )
+      ); ?>
+    </nav>
+
     <nav class="nav-main">
       <?php wp_nav_menu(
         array(

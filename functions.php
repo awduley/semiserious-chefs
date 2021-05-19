@@ -18,6 +18,9 @@
 
     // Font Awesome
     wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/a38893edb6.js', [], true );
+
+    // Main scripts
+    wp_enqueue_script( 'main-javascript' , get_template_directory_uri() . '/scripts/main.js', [], NULL, true );
   }
 
   

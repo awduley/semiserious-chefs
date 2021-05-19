@@ -12,10 +12,79 @@
       height: 40rem; 
     }
   }
+
+  .main-blog {
+
+    .wp-post-image {
+      height: 40rem;
+    } 
+  }
+
+  #secondary-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: space-around; 
+    align-items: center;
+    grid-gap: 2.4rem;
+    background: orange;
+    width: 100%;
+  }
+
+  #secondary-sidebar-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; 
+    align-items: center;
+    grid-gap: 1.4rem;
+  }
 }
 
 // Tablets and small laptops
 @media (min-width: 768px) {
+
+  .logo-container {
+    justify-content: space-between;
+  }
+  
+  .logo {
+    color: $color-secondary-2-4;
+    text-shadow: 0 0 12px white;
+    position: relative;
+    cursor: pointer;
+    font-size: 4rem;  
+    margin: 0;
+    margin-left: 2rem;
+  
+    &-knife {
+      display: block;
+    }
+  
+    .semiserious {
+      z-index: 10;
+      position: relative;
+    }
+  
+    .chefs {
+      z-index: 1;
+    }
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+
+  .nav-main__mobile {
+    display: none;
+  }
+
+  .nav-main {
+    display: block;
+  }
+  
+  .search-form {
+    display: block;
+  }
+
 
   .newest-recipes {
   
@@ -45,6 +114,13 @@
       align-items: start;
       grid-gap: 1.4rem;
     }
+  }
+
+  .main-blog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-gap: 2rem;
   }
 }
 
@@ -109,6 +185,20 @@
       }
     }
   }
+
+  .main-blog {
+  
+    .wp-post-image {
+      height: 30rem; 
+    }
+  }
+
+  #secondary-sidebar {
+    display: flex;
+    justify-content: center; 
+    width: 30rem;
+    min-width: 30rem;
+  }
 }
 
 // Tvs and large monitors
@@ -142,6 +232,10 @@
   }
 
   .recent-posts {
+
+    .wp-post-image {
+      height: 30rem; 
+    }
   
     &__container {
       grid-template-columns: repeat(3, 1fr);
@@ -150,8 +244,20 @@
 
   .random-recipes {
 
+    .wp-post-image {
+      height: 30rem; 
+    }
+
     &__container {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .main-blog {
+    grid-template-columns: repeat(3, 1fr);
+
+    .wp-post-image {
+      height: 30rem; 
     }
   }
 }

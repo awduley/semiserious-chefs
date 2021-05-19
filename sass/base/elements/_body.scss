@@ -29,13 +29,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // background: orange;
   width: 92%;
 }
 
 #primary {
   width: 100%;
-  margin: 0 auto;
+  //margin: 0 auto;
+  text-align: center;
 }
 
 .widget-area {

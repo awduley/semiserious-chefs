@@ -41,7 +41,7 @@ body {
 
 #primary {
   width: 100%;
-  margin: 0 auto; }
+  text-align: center; }
 
 .widget-area {
   padding: 2rem;
@@ -127,11 +127,13 @@ a.read-more {
 
 .header-main {
   height: 14rem;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   .header-main__top-bar {
     height: 8rem;
     background: radial-gradient(#954595, #370037);
-    box-shadow: 0 2px 2px #222; }
+    box-shadow: 0 2px 2px #222;
+    position: relative; }
 
 .logo-container {
   display: flex;
@@ -140,14 +142,13 @@ a.read-more {
   padding: 1rem;
   height: 100%; }
 
-.logo-img {
-  margin: 0 1rem; }
-
 .logo {
   color: #1A0339;
   text-shadow: 0 0 12px white;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 2.8rem;
+  margin: 0 auto; }
   .logo-knife {
     width: 8rem;
     height: auto;
@@ -155,7 +156,8 @@ a.read-more {
     position: absolute;
     bottom: 30%;
     left: 53%;
-    z-index: 0; }
+    z-index: 0;
+    display: none; }
   .logo .semiserious {
     z-index: 10;
     position: relative; }
@@ -166,37 +168,88 @@ a.read-more {
   font-size: 1.8rem;
   color: #555; }
 
-.nav-main__items {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
-  padding: 1rem; }
-
-.nav-main .menu-item {
-  margin: 0 1.6rem;
-  font-size: 1.7rem; }
-
-.nav-main a::after {
-  content: '';
+.hamburger-btn {
   position: absolute;
-  bottom: -20%;
+  margin: 1.8rem 0;
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: all .4s ease;
   left: 50%;
-  width: 0;
-  height: 1px;
-  background: #4B0017;
-  transition: all .2s ease; }
+  display: block;
+  width: 100%; }
+  .hamburger-btn .line-1,
+  .hamburger-btn .line-2,
+  .hamburger-btn .line-3 {
+    width: 3rem;
+    height: 4px;
+    background: #710526;
+    margin: .4rem auto;
+    transition: all .4s ease;
+    transform: scale(1) translate(0) rotate(0); }
+  .hamburger-btn .line-1-move,
+  .hamburger-btn .line-2-move,
+  .hamburger-btn .line-3-move {
+    background: #543184; }
+  .hamburger-btn .line-1-move {
+    transform: translate(0rem, 0.8rem) rotate(-135deg); }
+  .hamburger-btn .line-2-move {
+    transform: scale(0); }
+  .hamburger-btn .line-3-move {
+    transform: translate(0rem, -0.9rem) rotate(135deg); }
 
-.nav-main a:hover {
-  color: #4B0017; }
-  .nav-main a:hover::after {
+.nav-main__mobile {
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  position: fixed;
+  background: #fff;
+  left: 50%;
+  transform: translate(-50%, -300%);
+  display: block;
+  transition: all .7s ease;
+  z-index: 200; }
+  .nav-main__mobile.main-menu-toggle {
+    transform: translate(-50%, 45%); }
+  .nav-main__mobile .menu-item {
+    border: 1px solid black;
+    text-align: center;
+    padding: .4rem 0;
+    transition: all .2s ease; }
+    .nav-main__mobile .menu-item:hover {
+      background: #272727; }
+      .nav-main__mobile .menu-item:hover a {
+        color: #fff; }
+
+.nav-main {
+  display: none; }
+  .nav-main__items {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    padding: 1rem; }
+  .nav-main .menu-item {
+    margin: 0 1.6rem;
+    font-size: 1.7rem; }
+  .nav-main a::after {
     content: '';
     position: absolute;
     bottom: -20%;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    width: 0;
     height: 1px;
     background: #4B0017;
     transition: all .2s ease; }
+  .nav-main a:hover {
+    color: #4B0017; }
+    .nav-main a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #4B0017;
+      transition: all .2s ease; }
 
 .newest-recipes {
   margin-bottom: 4rem; }
@@ -370,6 +423,32 @@ a.read-more {
     width: 100%;
     height: auto; }
 
+.entry-content {
+  margin: 2rem 0; }
+
+.main-blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%; }
+  .main-blog .post {
+    margin-bottom: 4rem; }
+  .main-blog .wp-post-image {
+    object-fit: cover;
+    width: 100%;
+    height: 20rem; }
+  .main-blog .recent-posts__excerpt {
+    margin: 0; }
+
+.post-thumbnail {
+  width: 100%;
+  position: relative; }
+  .post-thumbnail img {
+    width: 100%;
+    height: auto; }
+
 .post-nav {
   display: flex;
   justify-content: center;
@@ -476,6 +555,9 @@ a.read-more {
   margin: 2rem 0; }
   .form-submit .submit:hover {
     background: #4B0017; }
+
+.search-form {
+  display: none; }
 
 .custom-search-form {
   position: relative; }
@@ -693,8 +775,8 @@ a.read-more {
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
-  width: 34rem;
-  min-width: 34rem; }
+  width: 30rem;
+  min-width: 30rem; }
 
 .sidebar-widget-area .widget {
   margin: 2rem 0; }
@@ -770,9 +852,50 @@ a.read-more {
 
 @media (min-width: 576px) {
   .newest-recipes .wp-post-image {
-    height: 40rem; } }
+    height: 40rem; }
+  .main-blog .wp-post-image {
+    height: 40rem; }
+  #secondary-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: space-around;
+    align-items: center;
+    grid-gap: 2.4rem;
+    background: orange;
+    width: 100%; }
+  #secondary-sidebar-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1.4rem; } }
 
 @media (min-width: 768px) {
+  .logo-container {
+    justify-content: space-between; }
+  .logo {
+    color: #1A0339;
+    text-shadow: 0 0 12px white;
+    position: relative;
+    cursor: pointer;
+    font-size: 4rem;
+    margin: 0;
+    margin-left: 2rem; }
+    .logo-knife {
+      display: block; }
+    .logo .semiserious {
+      z-index: 10;
+      position: relative; }
+    .logo .chefs {
+      z-index: 1; }
+  .hamburger-btn {
+    display: none; }
+  .nav-main__mobile {
+    display: none; }
+  .nav-main {
+    display: block; }
+  .search-form {
+    display: block; }
   .newest-recipes__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -787,7 +910,12 @@ a.read-more {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
-    grid-gap: 1.4rem; } }
+    grid-gap: 1.4rem; }
+  .main-blog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-gap: 2rem; } }
 
 @media (min-width: 992px) {
   #primary {
@@ -821,7 +949,14 @@ a.read-more {
     grid-column: 2 / 3;
     grid-row: 2 / 3; }
     .about__cf h4 {
-      font-weight: 400; } }
+      font-weight: 400; }
+  .main-blog .wp-post-image {
+    height: 30rem; }
+  #secondary-sidebar {
+    display: flex;
+    justify-content: center;
+    width: 30rem;
+    min-width: 30rem; } }
 
 @media (min-width: 1200px) {
   .site-main {
@@ -837,7 +972,15 @@ a.read-more {
     height: 30rem; }
   .newest-recipes__container {
     grid-template-columns: repeat(3, 1fr); }
+  .recent-posts .wp-post-image {
+    height: 30rem; }
   .recent-posts__container {
     grid-template-columns: repeat(3, 1fr); }
+  .random-recipes .wp-post-image {
+    height: 30rem; }
   .random-recipes__container {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .main-blog {
+    grid-template-columns: repeat(3, 1fr); }
+    .main-blog .wp-post-image {
+      height: 30rem; } }

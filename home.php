@@ -6,25 +6,30 @@
  get_header();
 ?>
 
-  <div class="content-wrap">
-  <main id="primary" class="site-main">
 
-    <?php 
+  <?php 
     if( have_posts() ) :
 
       if( is_home() && ! is_front_page() ) :
         ?>
         <header>
-          <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+          <h1 class="page-title screen-reader-text">
+          <?php single_post_title(); ?></h1>
         </header>
     <?php 
-      endif;
+    endif;
+  ?>
+
+  <div class="content-wrap">
+
+  <main id="primary" class="site-main main-blog">
     
+  <?php
     /* start the loop */
     while( have_posts() ) :
       the_post();
 
-      get_template_part( 'template-parts/content', get_post_type() );
+      get_template_part( 'template-parts/content' );
 
     endwhile;
 

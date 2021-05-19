@@ -1,0 +1,25 @@
+.content-wrap {
+  margin: 2rem;
+}
+
+.entry-meta {
+  margin: 1rem 0;
+}
+
+.entry-title {
+  color: $color-secondary-1-4
+}
+
+.post-thumbnail {
+  width: 100%;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.entry-content {
+  margin: 2rem 0;
+} 
