@@ -1,0 +1,59 @@
+.wpcf7 {
+  margin: 3rem 0;
+  background: linear-gradient(rgba($color-secondary-1-0, .85), rgba($color-secondary-1-0, .85)), url('../img/contact-form-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  padding: 1rem;
+  border-radius: 3px;
+
+  p {
+    margin: 1.6rem 0 .6rem;
+    color: #fff;
+  }
+}
+
+.wpcf7-form-init {
+
+}
+
+.wpcf7-form-control-wrap {
+  width: 100%;
+
+  input,
+  .wpcf7-form-control {
+    width: 100%;
+    padding: .6rem 1rem;
+    border: none;
+
+    &:focus {
+      box-shadow: inset 0 0 .6rem 0px #000;
+      outline: none;
+    }
+  }
+}
+
+.wpcf7-form-control {
+  min-width: 28rem;
+  
+  textarea {
+
+  }
+}
+
+.wpcf7-submit {
+  padding: .8rem 2rem;
+  background: $color-secondary-2-1;
+  border-radius: 3px;
+  display: inline;
+  border: none;
+  @include transition-fast;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.6rem;
+  min-width: auto;
+
+  &:hover {
+    background: $color-primary-3;
+    background: $color-secondary-2-2;
+  }
+}

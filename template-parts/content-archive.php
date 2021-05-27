@@ -1,7 +1,10 @@
 <article class="article-archive" <?php post_class(); ?>>
   <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 
-  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( [300, 300, ] ); ?></a>
+  <a href="<?php the_permalink(); ?>">
+    <?php
+      the_post_thumbnail();
+    ?></a>
 
   <div class="meta-info">
 

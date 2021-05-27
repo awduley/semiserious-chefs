@@ -31,10 +31,10 @@
     </div><!-- .header-main_top-bar -->
 
     <div class="hamburger-btn">
-        <div class="line-1"></div>
-        <div class="line-2"></div>
-        <div class="line-3"></div>
-      </div>
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="line-3"></div>
+    </div>
     <nav class="nav-main__mobile">
       <?php wp_nav_menu(
         array(

@@ -1,5 +1,5 @@
-.content-wrap {
-  margin: 2rem;
+.post {
+  text-align: left;
 }
 
 .entry-meta {
@@ -7,10 +7,10 @@
 }
 
 .entry-title {
-  color: $color-secondary-1-4
+  color: $color-secondary-1-4;
 }
 
-.post-thumbnail {
+.entry-thumbnail {
   width: 100%;
   position: relative;
 
@@ -20,6 +20,48 @@
   }
 }
 
+.wp-block-image {
+  margin: 2rem 0;
+}
+
 .entry-content {
   margin: 2rem 0;
+  text-align: left;
 } 
+
+.screen-reader-text {
+  visibility: hidden;
+}
+
+.nav-title {
+  display: inline;
+  background: lightblue;
+}
+
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #fff;
+    text-decoration:none;
+}
+ 
+.navigation li {
+    display: inline;
+}
+ 
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    background-color: #6FB7E9;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+ 
+.navigation li a:hover,
+.navigation li.active a {
+    background-color: #3C8DC5;
+}

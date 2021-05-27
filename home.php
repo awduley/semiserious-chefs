@@ -22,29 +22,41 @@
 
   <div class="content-wrap">
 
-  <main id="primary" class="site-main main-blog">
-    
-  <?php
-    /* start the loop */
-    while( have_posts() ) :
-      the_post();
+    <main id="primary" class="site-main main-blog">
+      
+    <?php
+      /* start the loop */
+      while( have_posts() ) :
+        the_post();
 
-      get_template_part( 'template-parts/content' );
+        get_template_part( 'template-parts/content' );
 
-    endwhile;
+      endwhile;
 
-    else :
-       
-      get_template_part( 'template-parts/content', 'none' );
+      else :
+        
+        get_template_part( 'template-parts/content', 'none' );
 
-    endif;
-    ?>
-  </main><!-- #primary -->
-  <?php 
-  if( is_active_sidebar( 'sidebar' ) ):
-    get_sidebar(); 
-  endif;
-  ?>
+      endif;
+      ?>
+
+    <div class="paginate-links">
+      <?php semiserious_chefs_number_pagination() ?>
+    </div>
+
+    </main><!-- #primary -->
+
+  <section class="double-sidebar">
+    <?php
+      if( is_active_sidebar( 'sidebar-1' ) ):
+      get_sidebar( '1' ); 
+      endif;
+      if( is_active_sidebar( 'sidebar-2' ) ):
+        get_sidebar( '2' ); 
+        endif;
+      ?>
+  </section>
+  
   </div><!-- .content-wrap -->
 <?php
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 

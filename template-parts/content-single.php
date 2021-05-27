@@ -8,11 +8,13 @@
 
     <div class="entry-meta">
       <h2 class="entry-title"><?php the_title(); ?></h2>
-      <p><?php esc_html_e( 'Posted on', 'semiserious-chefs' ); ?> <a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> <?php esc_html_e( 'by', 'semiserious-chefs' ); ?> <a href="<?php the_permalink(); ?>"><?php the_author(); ?></p></a>
+      <p><?php esc_html_e( 'Posted on', 'semiserious-chefs' ); ?> <a href="<?php echo the_permalink(); ?>"><?php echo get_the_date(); ?></a> <?php esc_html_e( 'by', 'semiserious-chefs' ); ?> <a href="<?php the_permalink(); ?>"><?php the_author_posts_link(); ?></p></a>
     </div><!-- .entry-meta -->
 
     <div class="entry-thumbnail">
-      <?php the_post_thumbnail( 'blog' ); ?>
+      <?php
+        the_post_thumbnail();
+      ?>
     </div>
 
   <div class="entry-content">
@@ -21,5 +23,7 @@
       the_content();
     
     ?>
+
+
   </div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

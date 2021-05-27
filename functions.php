@@ -155,8 +155,18 @@ function semiserious_chefs_widgets_init() {
  
   register_sidebar(
     array(
-      'name'          => esc_html__( 'Sidebar', 'semiserious-chefs' ),
-      'id'            => 'sidebar',
+      'name'          => esc_html__( 'Sidebar 1', 'semiserious-chefs' ),
+      'id'            => 'sidebar-1',
+      'description'   => esc_html__( 'Drop widgets here.', 'semiserious-chefs' ),
+      'before_widget' => '<div class="widget">',
+      'after_widget'  => '</div>', 
+    )
+  );
+
+  register_sidebar(
+    array(
+      'name'          => esc_html__( 'Sidebar 2', 'semiserious-chefs' ),
+      'id'            => 'sidebar-2',
       'description'   => esc_html__( 'Drop widgets here.', 'semiserious-chefs' ),
       'before_widget' => '<div class="widget">',
       'after_widget'  => '</div>', 
@@ -174,8 +184,6 @@ function semiserious_chefs_widgets_init() {
   );
 }
 add_action( 'widgets_init', 'semiserious_chefs_widgets_init' );
-
-
 
 
 function semiserious_chefs_custom_comment_title( $defaults ){
@@ -229,3 +237,20 @@ add_filter( 'comment_form_default_fields', 'unset_url_field' );
 
 
 
+// Code to add custom numbered pagination to the bottom of archive pages
+
+function semiserious_chefs_number_pagination() {
+
+  global $wp_query;
+  $bigNumber = 9999999;
+    echo paginate_links(
+      [
+        'base'        => str_replace( $bigNumber, '%#%', esc_url( get_pagenum_link( $bigNumber ) ) ),
+        'format'      => '?paged=%#%',
+        'current'     => max( 1, get_query_var('paged') ),
+        'total'       => $wp_query->max_num_pages,
+        'prev_text'   => __( '&larr; Previous', 'semiserious-chefs' ),
+        'next_text'   => __(  'Next &rarr;', 'semiserious-chefs' )
+      ]
+    );
+}

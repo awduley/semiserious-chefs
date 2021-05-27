@@ -1,50 +1,64 @@
 <?php 
 /**
- * This is the archive file to display by author, category, tag, or date
+ * The archive template for the theme.
  */
 
  get_header();
 ?>
-  <div class="content-wrap">
-  <main id="primary" class="site-main">
 
-  <h1 class="archive-title"><?php the_archive_title(); ?></h1>
 
   <?php 
-  
-    the_archive_description();
+    if( have_posts() ) :
 
-    if ( have_posts() ) :
-      while( have_posts() ) :
-        the_post();
-
-        get_template_part( 'template-parts/content', 'archive' );
-
-      endwhile;
-    ?>
-
-    <div class=" pagination pagination-archive">
-      <?php previous_posts_link( esc_html_e( "<< Newer posts", 'semiserious-chefs' ) ); ?>
-      <?php next_posts_link( esc_html_e( "Older posts >>", 'semiserious-chefs' ) ); ?>
-    </div>
-      
-    <?php
-      else :
+      if( is_home() && ! is_front_page() ) :
         ?>
-        <h2><?php esc_html_e( 'Sorry, there&rsquo;s nothing here to display', 'semiserious-chefs' ); ?></h2>
-       
-    <?php
-      endif;
-    ?>
-    
-  </main><!-- #primary -->
-  <?php 
-  if( is_active_sidebar( 'sidebar' ) ):
-    get_sidebar(); 
-  endif;
+        <header>
+          <h1 class="page-title screen-reader-text">
+          <?php single_post_title(); ?></h1>
+        </header>
+    <?php 
+    endif;
   ?>
+
+  <div class="content-wrap">
+
+  <main id="primary" class="site-main main-archive">
+    
+  <?php
+    /* start the loop */
+    while( have_posts() ) :
+      the_post();
+
+      get_template_part( 'template-parts/content' );
+
+    endwhile;
+
+    else :
+
+      get_template_part( 'template-parts/content', 'none' );
+
+    endif;
+    ?>
+
+    <div class="paginate-links">
+      <?php semiserious_chefs_number_pagination() ?>
+    </div>
+
+  </main><!-- #primary -->
+ 
+  <section class="double-sidebar">
+    <?php
+      if( is_active_sidebar( 'sidebar-1' ) ):
+      get_sidebar( '1' ); 
+      endif;
+      if( is_active_sidebar( 'sidebar-2' ) ):
+        get_sidebar( '2' ); 
+        endif;
+      ?>
+  </section>
+  
   </div><!-- .content-wrap -->
-  <?php 
+<?php
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 
   get_sidebar( 'bottom' );
 endif;

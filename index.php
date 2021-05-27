@@ -24,7 +24,7 @@
           the_post();
 
           /* Get the post-type-specific template for the content. */
-          get_template_part( 'template-parts/content', get_post_type() );
+          get_template_part( 'template-parts/content' );
 
         endwhile;
 
@@ -39,11 +39,18 @@
          ?>
 
   </main><!-- #primary -->
-  <?php 
-  if( is_active_sidebar( 'sidebar' ) ):
-    get_sidebar(); 
-  endif;
-  ?>
+
+  <section class="double-sidebar">
+    <?php
+      if( is_active_sidebar( 'sidebar-1' ) ):
+      get_sidebar( '1' ); 
+      endif;
+      if( is_active_sidebar( 'sidebar-2' ) ):
+        get_sidebar( '2' ); 
+        endif;
+      ?>
+  </section>
+  
   </div><!-- .content-wrap -->
   <?php 
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 

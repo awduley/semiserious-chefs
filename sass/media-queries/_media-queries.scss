@@ -1,41 +1,81 @@
 // Smart phones portrait mode
 @media (max-width: 576px) {
+  .newest-recipes,
+  .recent-posts,
+  .random-recipes {
+    
+    .wp-post-image {
+      height: 30rem; 
+    }
+  }
 
 }
+
+//attachment-post-thumbnail
+//wp-post-image
 
 // Smart phones landscape mode
 @media (min-width: 576px) {
 
-  .newest-recipes {
+  .newest-recipes,
+  .recent-posts,
+  .random-recipes {
     
     .wp-post-image {
       height: 40rem; 
-    }
-  }
-
-  .main-blog {
-
-    .wp-post-image {
-      height: 40rem;
     } 
   }
 
-  #secondary-sidebar {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: space-around; 
-    align-items: center;
-    grid-gap: 2.4rem;
-    background: orange;
-    width: 100%;
+  // .main-blog {
+
+  //   .wp-post-image {
+  //     height: 40rem;
+  //   } 
+  // }
+
+  // .main-archive {
+
+  //   .wp-post-image {
+  //     height: 40rem;
+  //   }
+  // }
+
+  .post-thumbnail {
+  
+    .recipe-navigation {
+      bottom: 1rem;
+  
+      // .navigation {
+      //   width: 100%;
+      //   padding: .4rem 0;
+      //   margin: 0 auto;
+      //   //background: blue;
+  
+      // }
+  
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    } 
+    
+    .post-nav__next,
+    .post-nav__prev {
+      display: block;
+      padding: 1rem;
+      border-radius: 3px;
+      text-align: center;
+      @include transition-fast;
+      cursor: pointer;
+      margin: 0 1rem;
+      width: 18rem;
+    }
   }
 
-  #secondary-sidebar-bottom {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center; 
-    align-items: center;
-    grid-gap: 1.4rem;
+  .comments-pagination {
+    flex-direction: row;
   }
 }
 
@@ -86,41 +126,116 @@
   }
 
 
-  .newest-recipes {
-  
-    &__container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: start;
-      grid-gap: 1.4rem;
-    }
-  }
-
-  .recent-posts {
-  
-    &__container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: start;
-      grid-gap: 1.4rem;
-    }
-  }
-
+  .newest-recipes,
+  .recent-posts,
   .random-recipes {
-
+  
     &__container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       align-items: start;
       grid-gap: 1.4rem;
     }
+
+    .wp-post-image {
+      height: 40rem; 
+    }
   }
+
+  // .recent-posts {
+  
+  //   &__container {
+  //     display: grid;
+  //     grid-template-columns: repeat(2, 1fr);
+  //     align-items: start;
+  //     grid-gap: 1.4rem;
+  //   }
+  // }
+
+  // .random-recipes {
+
+  //   &__container {
+  //     display: grid;
+  //     grid-template-columns: repeat(2, 1fr);
+  //     align-items: start;
+  //     grid-gap: 1.4rem;
+  //   }
+  // }
 
   .main-blog {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     grid-gap: 2rem;
+  }
+
+  .main-archive {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    grid-gap: 1.4rem;
+  }
+
+  .double-sidebar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  #secondary-sidebar-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: start;
+
+    .widget-bottom {
+      margin: 1rem;
+      width: 28rem;
+    }
+  }
+
+  .single-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0 0;
+  }
+  
+  .prev-post,
+  .next-post {
+    position: relative;
+    max-width: 40%;
+    margin: 2rem 0;
+  
+    a::before {
+      content: '\27a2';
+      position: absolute;
+      top: 50%;
+      opacity: 0;
+      @include transition-fast;
+    }
+  
+    a:hover::before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  .prev-post {
+  
+    a::before {
+      transform: scale(1.8) translateY(-40%) rotateY(180deg);
+      left: -22%;
+    }
+  }
+  
+  .next-post {
+    
+    a::before {
+      transform: scale(1.8) translateY(-40%);
+      right: -28%;
+    }
   }
 }
 
@@ -130,7 +245,7 @@
 @media (min-width: 992px) {
 
   #primary {
-    max-width: 60%;
+    max-width: 68%;
   }
 
   .content-wrap {
@@ -193,11 +308,13 @@
     }
   }
 
-  #secondary-sidebar {
+  .double-sidebar {
     display: flex;
-    justify-content: center; 
-    width: 30rem;
-    min-width: 30rem;
+    flex-direction: column;
+  }
+
+  #secondary-sidebar-bottom {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -216,48 +333,66 @@
 @media (min-width: 1300px) {
 
   #primary {
-    max-width: 70%;
-    padding: 1rem; 
+    max-width: 74%;
+    //padding: 1rem; 
   }
 
-  .newest-recipes {
-    
-    .wp-post-image {
-      height: 30rem; 
-    }
-  
-    &__container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .recent-posts {
-
-    .wp-post-image {
-      height: 30rem; 
-    }
-  
-    &__container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
+  .newest-recipes,
+  .recent-posts,
   .random-recipes {
-
-    .wp-post-image {
-      height: 30rem; 
-    }
-
+  
     &__container {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      grid-gap: 1.4rem;
     }
-  }
-
-  .main-blog {
-    grid-template-columns: repeat(3, 1fr);
 
     .wp-post-image {
       height: 30rem; 
     }
   }
+
+  // .newest-recipes {
+    
+  //   .wp-post-image {
+  //     height: 30rem; 
+  //   }
+  
+  //   .main-blog {
+  //     grid-template-columns: repeat(3, 1fr);
+  //   }
+  // }
+
+  // .recent-posts {
+
+  //   .wp-post-image {
+  //     height: 30rem; 
+  //   }
+  
+  //   &__container {
+  //     grid-template-columns: repeat(3, 1fr);
+  //   }
+  // }
+
+  // .random-recipes {
+
+  //   .wp-post-image {
+  //     height: 30rem; 
+  //   }
+
+  //   &__container {
+  //     grid-template-columns: repeat(3, 1fr);
+  //   }
+  // }
+
+  // .main-blog {
+  //   grid-template-columns: repeat(3, 1fr);
+  //   background: green;
+  //   padding: 3rem; 
+
+  //   .wp-post-image {
+  //     height: 30rem; 
+  //   }
+  // }
 }

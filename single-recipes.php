@@ -7,24 +7,15 @@
 ?>
 
   <div class="content-wrap">
-  <main id="primary" class="site-main">
+  <main id="primary" class="site-main main-recipe">
   
     <?php 
     while( have_posts() ) :
       the_post();
 
       get_template_part( 'template-parts/content', 'recipe' );
+      
       ?>
-
-      <div class="post-navigation">
-        <?php the_post_navigation(
-        array(
-          'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'semiserious-chefs' ) . '</span> <span class="nav-title">%title</span>', 
-          'next_text' => '<span class="nav-subtitle">' .esc_html__( 'Next:', 'semiserious-chefs' ) . '</span> <span class="nav-title">%title</span>'
-        )
-      ); ?>
-      </div>
-
       <?php
       // If comments are open or there is at least one comment, the comment template will be loaded
       if( comments_open() || get_comments_number() ) :
@@ -33,12 +24,22 @@
 
     endwhile;
     ?>
+
+
+<div class="recipe-navigation">
+
   </main><!-- #primary -->
-  <?php 
-  if( is_active_sidebar( 'sidebar' ) ):
-    get_sidebar(); 
-  endif;
-  ?>
+  <section class="double-sidebar">
+    <?php
+      if( is_active_sidebar( 'sidebar-1' ) ):
+      get_sidebar( '1' ); 
+      endif;
+      if( is_active_sidebar( 'sidebar-2' ) ):
+        get_sidebar( '2' ); 
+        endif;
+      ?>
+  </section>
+  
   </div><!-- .content-wrap -->
 <?php
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 

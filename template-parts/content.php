@@ -4,15 +4,23 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="article-post">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="article-post big-elephant">
 
     <div class="entry-meta">
       <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-    <p><?php esc_html_e( 'Posted on', 'semiserious-chefs' ); ?> <a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> <?php esc_html_e( 'by', 'semiserious-chefs' ); ?> <a href="<?php the_permalink(); ?>"><?php the_author(); ?></p></a>
+    <p><?php esc_html_e( 'Posted on', 'semiserious-chefs' ); ?> <?php echo get_the_date(); ?> <?php esc_html_e( 'by', 'semiserious-chefs' ); ?> <a href="<?php the_permalink(); ?>"><?php the_author_posts_link(); ?></a></p>
     </div><!-- .entry-meta -->
 
     <div class="post-thumbnail">
-      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+      <a href="<?php the_permalink(); ?>">
+      <?php
+        if ( has_post_thumbnail() ) {
+        the_post_thumbnail();
+        }
+        else {
+        echo get_first_image();
+        }
+      ?></a>
     </div>
 
   <div class="entry-content">

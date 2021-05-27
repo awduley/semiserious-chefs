@@ -12,15 +12,17 @@
     </div><!-- .entry-meta -->
 
     <div class="post-thumbnail">
-      <?php the_post_thumbnail(); ?>
-      <div class="post-nav">
-        
-        <div class="post-nav__prev">
-          Previous recipe
-        </div>
-        <div class="post-nav__next">
-          Next Recipe
-        </div>
+      <?php
+        the_post_thumbnail();
+      ?>
+      <div class="recipe-navigation">
+        <?php the_post_navigation(
+          array(
+            'prev_text' => '<div class="post-nav__prev">' . esc_html__( 'Previous recipe', 'semiserious-chefs' ) . '</div> <div class="nav-title">%title</div>',
+
+            'next_text' => '<div class="post-nav__next">' .esc_html__( 'Next recipe', 'semiserious-chefs' ) . '</div> <div class="nav-title">%title</div>'
+          )
+        ); ?>
       </div>
     </div>
 

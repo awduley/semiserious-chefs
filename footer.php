@@ -17,7 +17,7 @@
     </div><!-- .social-icons -->
 
     <div class="credits">
-      <p><?php echo esc_html__( 'Theme developed by', 'semiserious-chefs' ); ?> <span class="cfs"><a href="<?php esc_url( 'https://crookedfallstudios.com', 'semiserious-chefs' ); ?>" target="_blank"><?php echo esc_html__( 'Crooked Fall Studios', 'semiserious-chefs' ); ?></a></span> <?php _e( '| &copy; 2014 - ', 'semiserious-chefs' ); ?><span class="year"><?php echo date( 'Y' ); ?></span> <?php _e( 'All rights reserved', 'semiserious-chefs' ); ?></p>
+      <p><?php echo esc_html__( 'Theme developed by', 'semiserious-chefs' ); ?> <span class="cfs"><a href="<?php echo esc_url( 'https://crookedfallstudios.com', 'semiserious-chefs' ); ?>" target="_blank"><?php echo esc_html__( 'Crooked Fall Studios', 'semiserious-chefs' ); ?></a></span> <?php _e( '| &copy; 2014 - ', 'semiserious-chefs' ); ?><span class="year"><?php echo date( 'Y' ); ?></span> <?php _e( 'All rights reserved', 'semiserious-chefs' ); ?></p>
     </div>
 
   </div><!-- #colophon -->

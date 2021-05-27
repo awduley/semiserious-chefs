@@ -1,0 +1,81 @@
+// Pagination section for blog and archive page
+.paginate-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2 / 3;
+  width: auto;
+  margin: 1rem 0 5rem;
+  text-transform: uppercase;
+}
+
+.prev.page-numbers,
+.next.page-numbers,
+.page-numbers.current,
+.page-numbers {
+  padding: 1rem 1.6rem;
+  @include transition-fast;
+  
+    &:hover {
+      color: #fff;
+      background: $color-primary-2;
+    }
+}
+
+.prev.page-numbers {
+  width: 14rem
+}
+
+.next.page-numbers {
+  width: 14rem;
+}
+
+.page-numbers.current {
+  background: $color-primary-4;
+  color: #fff;
+}
+
+// Previous and next link section for single and recipe pages
+.single-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5rem 0 0;
+}
+
+.prev-post,
+.next-post {
+  position: relative;
+  max-width: 40%;
+  margin: 2rem 0;
+
+  a::before {
+    content: '\27a2';
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    @include transition-fast;
+  }
+
+  a:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.prev-post {
+
+  a::before {
+    transform: scale(1.8) translateY(-40%) rotateY(180deg);
+    left: -28%;
+  }
+}
+
+.next-post {
+  
+  a::before {
+    transform: scale(1.8) translateY(-40%);
+    right: -28%;
+  }
+}

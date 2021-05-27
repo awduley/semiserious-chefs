@@ -9,7 +9,7 @@
     <h1 class="page-title"><?php esc_html_e( 'Sorry, we can&rsquo;t seem to find what you are looking for...', 'semiserious-chefs' ); ?></h1>
   </header><!-- .page-header -->
 
-  <div class="page-content">
+  <div class="">
     <?php 
     if( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -38,8 +38,13 @@
 
     <p><?php esc_html_e( 'It appears we weren&rsquo;t able to find what you were looking for. Perhaps a search will help.', 'semiserious-chefs' ); ?></p>
     <?php
-    get_search_form();
+    
+    ?>
+    <div class="no-results-search-form">
+    <?php get_search_form(); ?>
+    </div>
 
+    <?php
     endif;
     ?>
   </div><!-- .page-content -->

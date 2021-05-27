@@ -6,7 +6,7 @@
  get_header();
 ?>
   <div class="content-wrap">
-  <main id="primary" class="site-main">
+  <main id="primary" class="site-main main-search">
 
     <h2 class="search-results">
       <?php esc_html__( 'Search results for: ', 'semiserious-chefs' ); ?>
@@ -44,11 +44,18 @@
       ?>
 <h1>search.php</h1>
   </main><!-- #primary -->
-  <?php 
-  if( is_active_sidebar( 'sidebar' ) ):
-    get_sidebar(); 
-  endif;
-  ?>
+
+  <section class="double-sidebar">
+    <?php
+      if( is_active_sidebar( 'sidebar-1' ) ):
+      get_sidebar( '1' ); 
+      endif;
+      if( is_active_sidebar( 'sidebar-2' ) ):
+        get_sidebar( '2' ); 
+        endif;
+      ?>
+  </section>
+  
   </div><!-- .content-wrap -->
   <?php 
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 

@@ -6,46 +6,65 @@
     width: 100%;
     height: auto;
   }
-}
 
-.post-nav {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  //background: rgba(0, 0, 0, .8);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: #fff;
-  padding: 2rem 0;
-}
+  .recipe-navigation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0rem;
+    color: #fff;
+  
+    .navigation {
+      width: 100%;
+      padding: .4rem 0;
+      margin: 0 auto;
+      //background: blue;
 
-.post-nav__next,
-.post-nav__prev {
-  width: 14rem;
-  height: auto;
-  padding: 1rem 0;
-  border-radius: 3px;
-  text-align: center;
-  @include transition-fast;
-  cursor: pointer;
-  margin: 0 1rem;
-}
+    }
 
-.post-nav__prev {
-  background: $color-primary-3;
-
-  &:hover {
-    background: $color-primary-4;
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  } 
+  
+  .post-nav__next,
+  .post-nav__prev {
+    display: block;
+    padding: .6rem;
+    border-radius: 3px;
+    text-align: center;
+    @include transition-fast;
+    cursor: pointer;
+    margin: .2rem 0;
+    width: 14rem;
+  }
+  
+  .post-nav__prev {
+    background: rgba($color-primary-3, .6);
+    color: #fff;
+  
+    &:hover {
+      background: $color-primary-4;
+    }
+  }
+  
+  .post-nav__next {
+    background: rgba($color-secondary-1-3, .6);
+    color: #fff;
+  
+    &:hover {
+      background: $color-secondary-1-4;
+    }
   }
 }
 
-.post-nav__next {
-  background: $color-secondary-1-3;
 
-  &:hover {
-    background: $color-secondary-1-4;
-  }
+
+.nav-title {
+  display: none;
 }
 
 .entry-content {
