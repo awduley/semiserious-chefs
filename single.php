@@ -35,15 +35,21 @@
     ?>
 
   </main><!-- #primary -->
-  <?php 
-  if( is_active_sidebar( 'sidebar' ) ):
-    get_sidebar(); 
-  endif;
-  ?>
+
+  <section class="double-sidebar">
+    <?php
+      if( is_active_sidebar( 'sidebar-1' ) ):
+      get_sidebar( '1' ); 
+      endif;
+      if( is_active_sidebar( 'sidebar-2' ) ):
+        get_sidebar( '2' ); 
+        endif;
+    ?>
+  </section>
+
   </div><!-- .content-wrap -->
 <?php
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 
   get_sidebar( 'bottom' );
 endif;
 get_footer();
-?>

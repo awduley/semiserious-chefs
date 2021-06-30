@@ -23,7 +23,9 @@
 
     <div class="header-main__top-bar">
       <div class="logo-container">
-        <h1 class="logo"><span class="semiserious"><?php esc_html_e( 'Semiserious', 'semiserious-chefs' ); ?></span><img class="logo-knife" src="<?php echo get_template_directory_uri() . '/img/knife-2.png'; ?>" alt="Knife"> <span class="chefs"><?php esc_html_e( 'Chefs', 'semiserious-chefs' ); ?></span></h1>
+        <a href="<?php echo home_url() ?>">
+          <h1 class="logo"><span class="semiserious"><?php esc_html_e( 'Semiserious', 'semiserious-chefs' ); ?></span><img class="logo-knife" src="<?php echo get_template_directory_uri() . '/img/knife-2.png'; ?>" alt="Knife"> <span class="chefs"><?php esc_html_e( 'Chefs', 'semiserious-chefs' ); ?></span></h1>
+        </a>  
         <div class="search-form">
           <?php get_search_form(); ?>
         </div>

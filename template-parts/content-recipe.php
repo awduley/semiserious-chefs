@@ -32,5 +32,9 @@
       the_content();
     
     ?>
+    <div class="recipe-meta-info">
+      <p>Filed under the following categories: <?php echo the_category( ', ' ); ?></p>
+      <?php echo the_tags(); ?>
+    </div>
   </div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

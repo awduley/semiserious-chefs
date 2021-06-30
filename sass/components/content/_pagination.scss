@@ -3,10 +3,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-row: 2 / 3;
   width: auto;
   margin: 1rem 0 5rem;
   text-transform: uppercase;
+
+  &__narrow {
+    margin: 4rem 0;
+  }
+
+  &__wide {
+    display: none;
+  }
 }
 
 .prev.page-numbers,

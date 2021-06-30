@@ -142,30 +142,10 @@
     }
   }
 
-  // .recent-posts {
-  
-  //   &__container {
-  //     display: grid;
-  //     grid-template-columns: repeat(2, 1fr);
-  //     align-items: start;
-  //     grid-gap: 1.4rem;
-  //   }
-  // }
-
-  // .random-recipes {
-
-  //   &__container {
-  //     display: grid;
-  //     grid-template-columns: repeat(2, 1fr);
-  //     align-items: start;
-  //     grid-gap: 1.4rem;
-  //   }
-  // }
-
   .main-blog {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    //justify-content: center;
     grid-gap: 2rem;
   }
 
@@ -237,8 +217,20 @@
       right: -28%;
     }
   }
-}
 
+  .article-search { 
+  
+    &__container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    &__thumbnail {
+      margin-right: 1rem;
+  
+    }
+  }
+}
 
 
 // Desktop computers 
@@ -305,6 +297,22 @@
   
     .wp-post-image {
       height: 30rem; 
+    }
+  }
+
+  .paginate-links {
+
+    &__narrow {
+      display: none;
+    }
+
+    &__wide {
+      display: block;
+      margin: -12rem 0 6rem;
+    }
+
+    &__home {
+      margin: 0 0 5rem;
     }
   }
 

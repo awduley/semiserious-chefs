@@ -69,4 +69,18 @@
 
 .entry-content {
   margin: 2rem 0;
+
+  .recipe-meta-info {
+    margin: 2rem 0;
+    padding: 0 1rem 1rem;
+    //background: lighten($color-secondary-1-2, 50);
+    border: 1px solid $color-secondary-1-0;
+    border-radius: 5px;
+    box-shadow: 0 0 .5rem #000;
+    
+
+    * {
+      margin: 1rem 0;
+    }
+  }
 } 

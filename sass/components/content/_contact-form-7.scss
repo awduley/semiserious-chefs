@@ -8,22 +8,23 @@
 
   p {
     margin: 1.6rem 0 .6rem;
-    color: #fff;
+    color: #fff; 
   }
 }
 
-.wpcf7-form-init {
+.wpcf7-form-init { 
 
 }
 
-.wpcf7-form-control-wrap {
-  width: 100%;
+.wpcf7-form-control-wrap { 
 
   input,
   .wpcf7-form-control {
     width: 100%;
+    min-width: 90%;
     padding: .6rem 1rem;
     border: none;
+    background: blue;
 
     &:focus {
       box-shadow: inset 0 0 .6rem 0px #000;

@@ -14,7 +14,7 @@
   function semiserious_chefs_scripts() {
 
      // Main styles
-     wp_enqueue_style( 'main-css', get_template_directory_URI() . '/css/main.css', [], '1.0.0', 'all' );
+     wp_enqueue_style( 'main-css-pizza', get_template_directory_URI() . '/css/main.css', [], '1.0.0', 'all' );
 
     // Font Awesome
     wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/a38893edb6.js', [], true );
@@ -90,6 +90,7 @@ function semiserious_chefs_setup() {
   );
 
   // Register new image sizes
+  add_image_size( 'thumbnail', 150, 150, true );
   add_image_size( 'square', 350, 350, true );
   add_image_size( 'portrait', 350, 750, true );
   add_image_size( 'box', 400, 400, true );
@@ -221,9 +222,9 @@ add_filter( 'comment_form_default_fields', 'unset_url_field' );
     // then re-define them as needed:
     $fields = [
       'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required" placeholder="Share your thoughts"></textarea></p>',
-      'author' => '<p class="comment-form-author">' . '<label for="author">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+      'author' => '<p class="comment-form-author">' . '<label for="author">' . __( '', 'semiserious-chefs'  ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
         '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' placeholder="&ast; Your name" /></p>',
-      'email'  => '<p class="comment-form-email"><label for="email">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+      'email'  => '<p class="comment-form-email"><label for="email">' . __( '', 'semiserious-chefs'  ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
         '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' placeholder="&ast; Your email" /></p>',
       // 'url'    => '<p class="comment-form-url"><label for="url">' . __( 'A CUSTOM WEBSITE LABEL', 'textdomain'  ) . '</label> ' .
       //   '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>',

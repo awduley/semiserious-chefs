@@ -25,9 +25,6 @@
     endwhile;
     ?>
 
-
-<div class="recipe-navigation">
-
   </main><!-- #primary -->
   <section class="double-sidebar">
     <?php

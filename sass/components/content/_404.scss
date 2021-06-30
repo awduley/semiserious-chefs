@@ -3,11 +3,21 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  margin: 0 auto;
+
+ header {
+   margin: 4rem 0;
+ }
 
   h1 {
     font-size: 4rem;
     text-align: center;
+  }
+
+  .page-not-found-img-container {
+    margin: 4rem auto;
+    width: 90%;
+    max-width: 50rem;
   }
 
   p {
@@ -16,7 +26,13 @@
   }
 }
 
+.custom-search-field {
+  //margin: 0 0 5rem;
+}
+
 .error-latest-posts {
+  text-align: left;
+  margin-top: 5rem;
 
   li {
     margin: 1rem 0;

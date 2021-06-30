@@ -1,19 +1,27 @@
 <article class="article-search">
-  <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+  <a href="<?php the_permalink(); ?>"><h2 class="article-search__title"><?php the_title(); ?></h2></a>
 
-  <div class="meta-info">
+  <div class="article-search__container">
 
-    <p><?php esc_html_e( 'Posted on', 'semiserious-chefs' ); ?> <?php echo get_the_date(); ?></p>
+    <div class="article-search__thumbnail">
+      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+    </div>
 
-    <?php if ( has_category() ) : ?>
+    <div class="article-search__content">
 
-      <p><?php esc_html_e( 'Categories:', 'semiserious-chefs' ); ?> <?php the_category( ', ' ); ?></p>
+    <div class="article-search__excerpt"><?php the_excerpt(); ?></div>
 
-    <?php endif; ?>
+      <div class="article-search__meta">
+        <p><?php esc_html_e( 'Posted on', 'semiserious-chefs' ); ?> <?php echo get_the_date(); ?></p>
 
-    <p><?php the_tags(); ?></p>
+        <?php if ( has_category() ) : ?>
 
-    <p><?php the_excerpt(); ?></p>
+        <p><?php esc_html_e( 'Categories:', 'semiserious-chefs' ); ?> <?php the_category( ', ' ); ?></p>
 
-  </div><!-- .meta-info -->
+        <?php endif; ?>
+
+        <p><?php the_tags(); ?></p>
+      </div>
+    </div><!-- .article-search__content -->
+  </div><!-- .article-search__container -->
 </article>

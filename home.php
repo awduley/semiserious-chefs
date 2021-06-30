@@ -40,25 +40,30 @@
       endif;
       ?>
 
-    <div class="paginate-links">
+    <div class="paginate-links paginate-links__narrow">
       <?php semiserious_chefs_number_pagination() ?>
     </div>
 
     </main><!-- #primary -->
 
-  <section class="double-sidebar">
-    <?php
-      if( is_active_sidebar( 'sidebar-1' ) ):
-      get_sidebar( '1' ); 
-      endif;
-      if( is_active_sidebar( 'sidebar-2' ) ):
-        get_sidebar( '2' ); 
+    <section class="double-sidebar">
+      <?php
+        if( is_active_sidebar( 'sidebar-1' ) ):
+        get_sidebar( '1' ); 
         endif;
-      ?>
-  </section>
+        if( is_active_sidebar( 'sidebar-2' ) ):
+          get_sidebar( '2' ); 
+          endif;
+        ?>
+    </section>
   
   </div><!-- .content-wrap -->
+
+    <div class="paginate-links paginate-links__wide paginate-links__home">
+      <?php semiserious_chefs_number_pagination() ?>
+    </div>
 <?php
+
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 
   get_sidebar( 'bottom' );
 endif;

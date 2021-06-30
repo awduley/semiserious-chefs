@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="article-post big-elephant">
+<article class="article-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div class="entry-meta">
       <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

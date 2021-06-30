@@ -20,7 +20,7 @@
     endif;
   ?>
 
-  <div class="content-wrap">
+  <div class="content-wrap"> 
 
   <main id="primary" class="site-main main-archive">
     
@@ -40,25 +40,17 @@
     endif;
     ?>
 
+
+  </main><!-- #primary -->
+  
+
+  </div><!-- .content-wrap -->
+
     <div class="paginate-links">
       <?php semiserious_chefs_number_pagination() ?>
     </div>
-
-  </main><!-- #primary -->
- 
-  <section class="double-sidebar">
-    <?php
-      if( is_active_sidebar( 'sidebar-1' ) ):
-      get_sidebar( '1' ); 
-      endif;
-      if( is_active_sidebar( 'sidebar-2' ) ):
-        get_sidebar( '2' ); 
-        endif;
-      ?>
-  </section>
-  
-  </div><!-- .content-wrap -->
 <?php
+
 if( is_active_sidebar( 'sidebar-bottom' ) ) : 
   get_sidebar( 'bottom' );
 endif;

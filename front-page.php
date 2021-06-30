@@ -14,7 +14,7 @@
       <div class="newest-recipes__container">
         <?php 
           $argsNewestRecipes = array(
-            'post_type'         => 'recipes',
+            'post_type'         => 'ssc_recipes',
             'posts_per_page'    => 6
           );
           $newestRecipes = new WP_Query( $argsNewestRecipes );
