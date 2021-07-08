@@ -1,0 +1,31 @@
+<section class="ingrediently margin-container">
+      <h3 class="margin-y-xl ingrediently-heading text-center"><span class="accent-secondary-1-2"><?php esc_html_e( 'Ingrediently', 'semiserious-chefs' ); ?> </span><?php esc_html_e ( '&#8208; my new book!', 'semiserious-chefs' ); ?></h3>
+      <div class="ingrediently-container">
+        <div class="temp-img">
+          <img class="ingrediently-container__img" src="<?php echo get_template_directory_uri() . '/img/ingrediently.jpg'; ?>" alt="Ingrediently Book">
+          </div>
+        <div class="ingrediently-container__info">
+          <ul class="ingrediently-container__items">
+            <li class="ingrediently-container__item">
+              <?php esc_html_e( 'Stuffed to the brim with history and knowledge of all your favorite ingredients.', 'semiserious-chefs' ); ?> 
+            </li>
+            <li class="ingrediently-container__item">
+            <?php esc_html_e( 'Tried and true recipes I\'ve personally created and refined over time.', 'semiserious-chefs' ); ?> 
+            </li>
+            <li class="ingrediently-container__item">
+            <?php esc_html_e( 'This book is for those who love learning about and trying new food.', 'semiserious-chefs' ); ?>         
+            </li>
+            <li class="ingrediently-container__item">
+            <?php esc_html_e( 'From Morocco through the Mediterranean and the middle east all the way to east Asia, this book has it covered.', 'semiserious-chefs' ); ?>
+            </li>
+            <li class="ingrediently-container__item">
+            <?php esc_html_e( 'I\'ve literally spent hundreds of hours mastering the ingredients shared in this book. Believe me, my husband had to listen to me rant and rave about Ethiopian Berbere.', 'semiserious-chefs' ); ?>
+            </li>
+            <li class="ingrediently-container__item">
+            <?php esc_html_e( 'If you don\'t fall in love with the book, I offer a 100&#37; money back guarantee. So what are you waiting for, order today!', 'semiserious-chefs' ); ?>
+            </li>
+          </ul>
+        </div><!-- ingrediently-container-info -->
+          
+      </div><!-- ingrediently-container -->
+    </section><!-- .ingrediently -->

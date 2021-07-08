@@ -15,7 +15,7 @@
         <?php 
           $argsNewestRecipes = array(
             'post_type'         => 'ssc_recipes',
-            'posts_per_page'    => 6
+            'posts_per_page'    => 4
           );
           $newestRecipes = new WP_Query( $argsNewestRecipes );
           if( $newestRecipes->have_posts() ) :
@@ -45,20 +45,6 @@
       </div><!-- .newest-recipes__container -->
     </section><!-- .newest-recipes -->
 
-    <section class="about">
-        <div class="about__container margin-container">
-          <img src="<?php echo get_template_directory_uri() . '/img/placeholder-couple-cropped.jpg'; ?>" alt="Vanessa and Andrew" class="about__pic">
-          <div class="about__info">
-            <h4 class="text-center margin-y-lg"><?php esc_html_e( 'About Us', 'semiserious-chefs' ); ?></h4>
-            <p><?php esc_html_e( "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", 'semiserious-chefs' ); ?></p>
-          </div>
-          <div class="about__cf">
-            <h4 class="text-center margin-y-lg"><?php esc_html_e( 'About CF', 'semiserious-chefs' ); ?></h4>
-            <p><?php esc_html_e( "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", 'semiserious-chefs' ); ?></p>
-          </div>
-        </div><!-- .about-container -->
-      </section><!-- .about -->
-
     <section class="recent-posts margin-container">
       <h4 class="margin-y-lg recent-posts__heading"><span class="accent-secondary-1-2"><?php esc_html_e( 'Newest', 'semiserious-chefs' ); ?> </span><?php esc_html_e( 'blog posts', 'semiserious-chefs' ); ?> <i class="far fa-grin-wink"></i></h4>
       
@@ -67,7 +53,7 @@
         <?php 
           $argsRecentPosts = array(
             'post_type'         => 'post',
-            'posts_per_page'    => 6
+            'posts_per_page'    => 4
           );
           $recentPosts = new WP_Query( $argsRecentPosts );
           if ( $recentPosts->have_posts() ) :
@@ -93,38 +79,6 @@
 
       </div><!-- .recent-posts__container -->
     </section><!-- .recent-posts -->
-
-    <section class="ingrediently margin-container">
-      <h3 class="margin-y-xl ingrediently-heading text-center"><span class="accent-secondary-1-2"><?php esc_html_e( 'Ingrediently', 'semiserious-chefs' ); ?> </span><?php esc_html_e ( '&#8208; my new book!', 'semiserious-chefs' ); ?></h3>
-      <div class="ingrediently-container">
-        <div class="temp-img">
-          <img class="ingrediently-container__img" src="<?php echo get_template_directory_uri() . '/img/ingrediently.jpg'; ?>" alt="Ingrediently Book">
-          </div>
-        <div class="ingrediently-container__info">
-          <ul class="ingrediently-container__items">
-            <li class="ingrediently-container__item">
-              <?php esc_html_e( 'Stuffed to the brim with history and knowledge of all your favorite ingredients.', 'semiserious-chefs' ); ?> 
-            </li>
-            <li class="ingrediently-container__item">
-            <?php esc_html_e( 'Tried and true recipes I\'ve personally created and refined over time.', 'semiserious-chefs' ); ?> 
-            </li>
-            <li class="ingrediently-container__item">
-            <?php esc_html_e( 'This book is for those who love learning about and trying new food.', 'semiserious-chefs' ); ?>         
-            </li>
-            <li class="ingrediently-container__item">
-            <?php esc_html_e( 'From Morocco through the Mediterranean and the middle east all the way to east Asia, this book has it covered.', 'semiserious-chefs' ); ?>
-            </li>
-            <li class="ingrediently-container__item">
-            <?php esc_html_e( 'I\'ve literally spent hundreds of hours mastering the ingredients shared in this book. Believe me, my husband had to listen to me rant and rave about Ethiopian Berbere.', 'semiserious-chefs' ); ?>
-            </li>
-            <li class="ingrediently-container__item">
-            <?php esc_html_e( 'If you don\'t fall in love with the book, I offer a 100&#37; money back guarantee. So what are you waiting for, order today!', 'semiserious-chefs' ); ?>
-            </li>
-          </ul>
-        </div><!-- ingrediently-container-info -->
-          
-      </div><!-- ingrediently-container -->
-    </section><!-- .ingrediently -->
 
     <section class="random-recipes margin-container">
       <h4 class="margin-y-lg random-recipes__heading"><span class="accent-secondary-1-2"><?php esc_html_e( 'Fresh', 'semiserious-chefs' ); ?> </span><?php esc_html_e( 'dinner ideas!', 'semiserious-chefs' ); ?></h4>
@@ -154,11 +108,25 @@
             </h3><!-- .random-recipes__title -->
           </a>
           
-        </div><!-- .newest-recipes__post -->
+        </div><!-- .random-recipes__post -->
         <?php endwhile; wp_reset_postdata(); ?>
 
-      </div><!-- .newest-recipes__container -->
-    </section><!-- .newest-recipes -->
+      </div><!-- .random-recipes__container -->
+    </section><!-- .random-recipes -->
+
+    <section class="about">
+        <div class="about__container margin-container">
+          <img src="<?php echo get_template_directory_uri() . '/img/placeholder-couple-cropped.jpg'; ?>" alt="Vanessa and Andrew" class="about__pic">
+          <div class="about__info">
+            <h4 class="text-center margin-y-lg"><?php esc_html_e( 'About Us', 'semiserious-chefs' ); ?></h4>
+            <p><?php esc_html_e( "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", 'semiserious-chefs' ); ?></p>
+          </div>
+          <div class="about__cf">
+            <h4 class="text-center margin-y-lg"><?php esc_html_e( 'About CF', 'semiserious-chefs' ); ?></h4>
+            <p><?php esc_html_e( "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", 'semiserious-chefs' ); ?></p>
+          </div>
+        </div><!-- .about-container -->
+      </section><!-- .about -->
 
 
 

@@ -195,6 +195,17 @@ add_filter('comment_form_defaults', 'semiserious_chefs_custom_comment_title', 20
 
 
 
+// Change the search to return more than one result
+function ssc_wp_search_size($searchQuery) {
+  if ( $searchQuery->is_search ) // Make sure it is a search page
+      $searchQuery->query_vars['posts_per_page'] = 10; // Change 10 to the number of posts you would like to show
+
+  return $searchQuery; // Return our modified query variables
+}
+add_filter('pre_get_posts', 'ssc_wp_search_size'); // Hook our custom function onto the request filter
+
+
+
 
 // // Remove the website field from the comment section
 function unset_url_field( $fields ) {
@@ -203,12 +214,6 @@ function unset_url_field( $fields ) {
   return $fields;
 }
 add_filter( 'comment_form_default_fields', 'unset_url_field' );
-
-
-
-
-
-
 
 
 // comment form fields re-defined:

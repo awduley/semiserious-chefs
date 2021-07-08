@@ -137,12 +137,14 @@ textarea {
 .comment-form-author,
 .comment-form-email {
   text-align: left;
+  width: 100%;
   
   input {
     padding: .6rem 1rem;
     color: lighten($color-gray-dark, 16);
     font-size: 1.8rem;
     margin: 1.4rem 0 0;
+    width: 100%;
 
     &:focus {
       box-shadow: inset 0 0 2px 1px #000;

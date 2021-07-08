@@ -3,7 +3,7 @@
  * Template for displaying pages
  */
 
- get_header( 'page' );
+ get_header();
 ?>
   <div class="content-wrap">
   <main id="primary" class="site-main main-page">
